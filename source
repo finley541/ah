@@ -11903,19 +11903,18 @@ LoginButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 LoginButton.TextScaled = true
 LoginButton.TextSize = 1.000
 LoginButton.TextWrapped = true
-LoginButton.MouseButton1Down:Connect(function()
-	if EnterToken.Text == "theaquabest" or
+LoginButton.MouseButton1Down:connect(function()
+	if EnterToken.Text == "eaco"or
+		EnterToken.Text == "theaquabest" or
 		EnterToken.Text == "noob" or
-		EnterToken.Text == "eaco" or
-		EnterToken.Text == "Chad_Wild" or
-		EnterToken.Text == "kongolo" then
+		EnterToken.Text == "kongolo" or
+		EnterToken.Text == "Chad_Wild" then
 		LoginFrame.Visible = false
 		MainFrame.Visible = true
 	end
-	end
-	end
-	end
+
 end)
+
 
 WM2.Name = "WM2"
 WM2.Parent = ScreenGui
