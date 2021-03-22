@@ -1,8 +1,9 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Aqua Hub Executed"; -- the title (ofc)
+	Text = "Welcome to Aqua Hub v4.1!"; -- what the text says (ofc)
+	Icon = "rbxassetid://57254792"; -- the image if u want.
+	Duration = 5; -- how long the notification should in secounds
+})
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -94,6 +95,7 @@ IYButton.Text = "Infinite Yield"
 IYButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 IYButton.TextSize = 14.000
 IYButton.MouseButton1Down:Connect(function()
+	ExeScrFrame.Visible = true
 	if IY_LOADED and not _G.IY_DEBUG == true then
 		error("Infinite Yield is already running!",0)
 		return
@@ -11802,6 +11804,13 @@ IYButton.MouseButton1Down:Connect(function()
 	Credits:Destroy()
 	IntroBackground:Destroy()
 	minimizeHolder()
+	ExeScrFrame.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Infinite Yield Executed"; -- the title (ofc)
+		Text = "You have executed Infinite Yield!"; -- what the text says (ofc)
+		Icon = "rbxassetid://57254792"; -- the image if u want.
+		Duration = 5; -- how long the notification should in secounds
+	})
 end)
 
 CloseButton.Name = "CloseButton"
@@ -11827,7 +11836,6 @@ OpenFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenFrame.Position = UDim2.new(0, 0, 0.480640858, 0)
 OpenFrame.Size = UDim2.new(0, 100, 0, 29)
 OpenFrame.Visible = false
-OpenFrame.Active = true
 
 OpenButton.Name = "OpenButton"
 OpenButton.Parent = OpenFrame
@@ -11840,6 +11848,10 @@ OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OpenButton.TextScaled = true
 OpenButton.TextSize = 20.000
 OpenButton.TextWrapped = true
+OpenButton.MouseButton1Down:Connect(function()
+	OpenFrame.Visible = false
+	LoginFrame.Visible = true
+end)
 
 LoginFrame.Name = "LoginFrame"
 LoginFrame.Parent = ScreenGui
@@ -11903,18 +11915,70 @@ LoginButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 LoginButton.TextScaled = true
 LoginButton.TextSize = 1.000
 LoginButton.TextWrapped = true
-LoginButton.MouseButton1Down:connect(function()
-	if EnterToken.Text == "eaco"or
-		EnterToken.Text == "theaquabest" or
-		EnterToken.Text == "noob" or
-		EnterToken.Text == "kongolo" or
-		EnterToken.Text == "Chad_Wild" then
+LoginButton.MouseButton1Down:Connect(function()
+	if EnterToken.Text == "razr" then
 		LoginFrame.Visible = false
 		MainFrame.Visible = true
-	end
+		end
+	end)
 
-end)
+WM1.Name = "WM1"
+WM1.Parent = ScreenGui
+WM1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+WM1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WM1.Position = UDim2.new(0.410672992, 0, 0.314718604, 0)
+WM1.Size = UDim2.new(0, 239, 0, 323)
 
+Frame_13.Parent = WM1
+Frame_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_13.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame_13.Position = UDim2.new(0.000978261232, 0, -0.00114414096, 0)
+Frame_13.Size = UDim2.new(0, 239, 0, 8)
+
+UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_13.Parent = Frame_13
+
+Frame_14.Parent = WM1
+Frame_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_14.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame_14.Position = UDim2.new(-0.00320583582, 0, 0.972270846, 0)
+Frame_14.Size = UDim2.new(0, 238, 0, 8)
+
+UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_14.Parent = Frame_14
+
+Frame_15.Parent = WM1
+Frame_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_15.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame_15.Position = UDim2.new(0.988880813, 0, -0.00114414096, 0)
+Frame_15.Size = UDim2.new(0, 8, 0, 323)
+
+UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_15.Parent = Frame_15
+
+Frame_16.Parent = WM1
+Frame_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_16.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame_16.Position = UDim2.new(-0.00320583582, 0, -0.00114414096, 0)
+Frame_16.Size = UDim2.new(0, 8, 0, 323)
+
+UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_16.Parent = Frame_16
+
+TextLabel_8.Parent = WM1
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.Position = UDim2.new(0.079497911, 0, 0.421052635, 0)
+TextLabel_8.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_8.Font = Enum.Font.SourceSans
+TextLabel_8.Text = "I have spent way too long on this."
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextScaled = true
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextWrapped = true
+
+wait(2)
+WM1.Visible = false
 
 WM2.Name = "WM2"
 WM2.Parent = ScreenGui
@@ -11922,11 +11986,6 @@ WM2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 WM2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WM2.Position = UDim2.new(0.410672992, 0, 0.314718604, 0)
 WM2.Size = UDim2.new(0, 239, 0, 323)
-WM2.Visible = false
-WM2.Active = true
-wait(2)
-WM2.Visible = false
-WM3.Visible = true
 
 Frame.Parent = WM2
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -11976,17 +12035,15 @@ TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 
+wait(2)
+WM2.Visible = false
+
 WM3.Name = "WM3"
 WM3.Parent = ScreenGui
 WM3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 WM3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WM3.Position = UDim2.new(0.410672992, 0, 0.314718604, 0)
 WM3.Size = UDim2.new(0, 239, 0, 323)
-WM3.Visible = false
-WM3.Active = true
-wait(2)
-WM3.Visible = false
-WM4.Visible = true
 
 Frame_5.Parent = WM3
 Frame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -12036,17 +12093,15 @@ TextLabel_4.TextScaled = true
 TextLabel_4.TextSize = 14.000
 TextLabel_4.TextWrapped = true
 
+wait(2)
+WM3.Visible = false
+
 WM4.Name = "WM4"
 WM4.Parent = ScreenGui
 WM4.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 WM4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WM4.Position = UDim2.new(0.410672992, 0, 0.314718604, 0)
 WM4.Size = UDim2.new(0, 239, 0, 323)
-WM4.Visible = false
-WM4.Active = true
-wait(2)
-WM4.Visible = false
-LoginFrame.Visible = true
 
 Frame_9.Parent = WM4
 Frame_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -12096,6 +12151,10 @@ TextLabel_5.TextScaled = true
 TextLabel_5.TextSize = 14.000
 TextLabel_5.TextWrapped = true
 
+wait(2)
+WM4.Visible = false
+LoginFrame.Visible = true
+
 ExeScrFrame.Name = "ExeScrFrame"
 ExeScrFrame.Parent = ScreenGui
 ExeScrFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
@@ -12125,63 +12184,3 @@ TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_7.TextScaled = true
 TextLabel_7.TextSize = 14.000
 TextLabel_7.TextWrapped = true
-
-WM1.Name = "WM1"
-WM1.Parent = ScreenGui
-WM1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-WM1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-WM1.Position = UDim2.new(0.410672992, 0, 0.314718604, 0)
-WM1.Size = UDim2.new(0, 239, 0, 323)
-WM1.Visible = true
-WM1.Active = true
-wait(2)
-WM1.Visible = false
-WM2.Visible = true
-
-Frame_13.Parent = WM1
-Frame_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_13.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame_13.Position = UDim2.new(0.000978261232, 0, -0.00114414096, 0)
-Frame_13.Size = UDim2.new(0, 239, 0, 8)
-
-UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_13.Parent = Frame_13
-
-Frame_14.Parent = WM1
-Frame_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_14.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame_14.Position = UDim2.new(-0.00320583582, 0, 0.972270846, 0)
-Frame_14.Size = UDim2.new(0, 238, 0, 8)
-
-UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_14.Parent = Frame_14
-
-Frame_15.Parent = WM1
-Frame_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_15.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame_15.Position = UDim2.new(0.988880813, 0, -0.00114414096, 0)
-Frame_15.Size = UDim2.new(0, 8, 0, 323)
-
-UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_15.Parent = Frame_15
-
-Frame_16.Parent = WM1
-Frame_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_16.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame_16.Position = UDim2.new(-0.00320583582, 0, -0.00114414096, 0)
-Frame_16.Size = UDim2.new(0, 8, 0, 323)
-
-UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 255, 6)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(246, 10, 6)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(252, 221, 9)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_16.Parent = Frame_16
-
-TextLabel_8.Parent = WM1
-TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.BackgroundTransparency = 1.000
-TextLabel_8.Position = UDim2.new(0.079497911, 0, 0.421052635, 0)
-TextLabel_8.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_8.Font = Enum.Font.SourceSans
-TextLabel_8.Text = "I have spent way too long on this."
-TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.TextScaled = true
-TextLabel_8.TextSize = 14.000
-TextLabel_8.TextWrapped = true
